@@ -2,12 +2,12 @@ package eu.luminis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-@EnableEurekaServer
-public class DiscoveryApplication {
+@EnableDiscoveryClient
+public class PlanetManagerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(DiscoveryApplication.class, args);
+		SpringApplication.run(PlanetManagerApplication.class, args);
 	}
 }
