@@ -4,18 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>eu.luminis</groupId>
-	<artifactId>evoluting-world-service</artifactId>
+	<artifactId>evoluting-planet</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>evoluting-world-service</name>
-	<description>Demo project for Spring Boot</description>
+	<name>evoluting-planet</name>
+	<description>Evoluting Planet</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<properties>
