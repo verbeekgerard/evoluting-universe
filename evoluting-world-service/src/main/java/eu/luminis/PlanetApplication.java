@@ -9,12 +9,12 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @EnableAsync
 @EnableDiscoveryClient
-public class EvolutingPlanetApplication {
+public class PlanetApplication {
 
 	public static void main(String[] args) {
 		setName(args);
 		setPort(args);
-		SpringApplication.run(EvolutingPlanetApplication.class, args);
+		SpringApplication.run(PlanetApplication.class, args);
 	}
 
 	private static void setName(String[] args){
