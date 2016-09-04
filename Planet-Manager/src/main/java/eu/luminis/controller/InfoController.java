@@ -1,7 +1,7 @@
 package eu.luminis.controller;
 
 import eu.luminis.domain.Planet;
-import eu.luminis.service.PlanetSource;
+import eu.luminis.service.PlanetDiscoveryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,10 +16,10 @@ import java.util.List;
 public class InfoController {
 
     @Autowired
-    PlanetSource planetSource;
+    PlanetDiscoveryService planetDiscoveryService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/getPlanets")
     public List<Planet> getPlanets(){
-        return planetSource.getPlanets();
+        return planetDiscoveryService.getDiscoverdPlanets();
     }
 }
