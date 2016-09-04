@@ -2,6 +2,7 @@ package eu.luminis.service;
 
 import eu.luminis.domain.Planet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ import java.util.stream.Collectors;
 public class PlanetDiscoveryService implements PlanetSource {
     @Autowired
     private DiscoveryClient discoveryClient;
+
+    @Value("${spring.application.name}")
+    String applicationName;
 
 
     public List<Planet> getDiscoverdPlanets(){
@@ -32,7 +36,9 @@ public class PlanetDiscoveryService implements PlanetSource {
      * @return List of planet names
      */
     public List<String> getPlanetsNames(){
-        return discoveryClient.getServices();
+        List<String> allNames = discoveryClient.getServices();
+        //filter own name out of the list
+        return allNames.stream().filter(n-> !n.equals(applicationName)).collect(Collectors.toList());
     }
 
     /**
