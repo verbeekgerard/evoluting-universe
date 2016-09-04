@@ -12,16 +12,24 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class EvolutingPlanetApplication {
 
 	public static void main(String[] args) {
-		System.setProperty("spring.application.name", getName(args));
+		setName(args);
+		setPort(args);
 		SpringApplication.run(EvolutingPlanetApplication.class, args);
 	}
 
-	private static String getName(String[] args){
-		if(args.length > 0 && !args[0].equals("--spring.output.ansi.enabled=always")){
-			return args[0];
+	private static void setName(String[] args){
+		String name;
+		if (args.length > 0 && !args[0].equals("--spring.output.ansi.enabled=always")) {
+			name = args[0];
+		} else {
+			name = NameService.getRandomName();
 		}
-
-		return NameService.getRandomName();
+		System.setProperty("spring.application.name", name);
 	}
 
+	private static void setPort(String[] args) {
+		if (args.length > 1 && !args[0].equals("--spring.output.ansi.enabled=always")) {
+			System.setProperty("server.port", args[1]);
+		}
+	}
 }

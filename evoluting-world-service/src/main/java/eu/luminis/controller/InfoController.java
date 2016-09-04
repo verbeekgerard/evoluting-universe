@@ -25,10 +25,10 @@ public class InfoController {
     @Autowired
     RunService runService;
 
-    @RequestMapping(value = "/startWorld")
+    @RequestMapping(value = "/startPlanet")
     public String start(){
         runService.run();
-        return "The world is started!";
+        return "{'started':'true'}";
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/currentStats")
@@ -41,8 +41,8 @@ public class InfoController {
         return exportInfo.getStats();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/getAnimals")
-    public List<Animal> getAnimals(){
+    @RequestMapping(method = RequestMethod.GET, value = "/getPopulation")
+    public List<Animal> getPopulation(){
         ExportInfo exportInfo =  ExportInfoImpl.getInstance();
         if(exportInfo == null){
             log.error("No ExportInfo instance available. Start the 'world' first!");
