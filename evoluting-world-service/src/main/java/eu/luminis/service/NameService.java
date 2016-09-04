@@ -16,8 +16,8 @@ public class NameService {
 
     private static int getRandomIndex() {
         Random r = new Random();
-        int max = PlanetName.values().length;
-        return r.nextInt((max - 0) + 1) + 0;
+        int max = PlanetName.values().length-1;
+        return r.nextInt((max - 0) + 1);
     }
 
     enum PlanetName {
