@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by gerardverbeek on 03/09/16.
@@ -16,20 +17,45 @@ import java.util.List;
 public class PlanetRegisterService {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    List<KnownPlanet> knownPlanets = new ArrayList<>();
+    private List<KnownPlanet> knownPlanets = new ArrayList<>();
 
-    public List<KnownPlanet>getKnownPlanets(){
-        return knownPlanets;
+    /**
+     *
+     * @return All the planets that are started
+     */
+    public List<KnownPlanet> getStartedKnownPlanets(){
+        return knownPlanets.stream().filter(KnownPlanet::isStarted).collect(Collectors.toList());
     }
 
+    /**
+     *
+     * @return All the planets that are not started
+     */
+    public List<KnownPlanet> getNotStartedKnownPlanets(){
+        return knownPlanets.stream().filter(p->!p.isStarted()).collect(Collectors.toList());
+    }
+
+    /**
+     * Remove an existing planet from the register
+     * @param knownPlanet
+     */
     public void removePlanetFromRegistry(KnownPlanet knownPlanet){
         knownPlanets.remove(knownPlanet);
         log.info("Planet '{}' removed location: '{}'", knownPlanet.getName(), knownPlanet.getUrl());
     }
 
+    /**
+     * Add a new planet to the register
+     * @param planet
+     */
     public void addPlanetToRegister(Planet planet){
         KnownPlanet knownPlanet = new KnownPlanet(planet);
         knownPlanets.add(knownPlanet);
         log.info("Planet '{}' added. Location: '{}'", knownPlanet.getName(), knownPlanet.getUrl());
     }
+
+    public List<KnownPlanet>getKnownPlanets(){
+        return knownPlanets;
+    }
+
 }

@@ -26,7 +26,7 @@ public class PlanetDiscoveryServiceTest {
     private DiscoveryClient discoveryClient;
 
     @Autowired
-    private PlanetDiscoveryService planetDiscoveryService;
+    private DiscoveryService discoveryService;
 
 
     @Test
@@ -34,7 +34,7 @@ public class PlanetDiscoveryServiceTest {
 
         List<String> names = Arrays.asList("jupiter", "mars", "uranus");
         given(discoveryClient.getServices()).willReturn(names);
-        List<String> namesResult = planetDiscoveryService.getPlanetsNames();
+        List<String> namesResult = discoveryService.getPlanetsNames();
         assertThat(namesResult).contains("jupiter", "mars", "uranus");
     }
 }

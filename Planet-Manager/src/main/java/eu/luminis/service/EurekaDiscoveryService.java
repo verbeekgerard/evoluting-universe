@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 
 @Service
-public class PlanetDiscoveryService implements PlanetSource {
+public class EurekaDiscoveryService implements DiscoveryService {
     @Autowired
     private DiscoveryClient discoveryClient;
 
@@ -21,12 +21,19 @@ public class PlanetDiscoveryService implements PlanetSource {
     String applicationName;
 
 
+    /**
+     * @return a list of all discovered planets
+     */
     public List<Planet> getDiscoverdPlanets(){
         List<Planet> planets;
         List<ServiceInstance> serviceInstances = new ArrayList<>();
 
-        getPlanetsNames().stream().forEach(name-> serviceInstances.addAll(discoveryClient.getInstances(name)));
-        planets = serviceInstances.stream().map(this::createPlanet).collect(Collectors.toList());
+        getPlanetsNames().stream()
+                .forEach(name-> serviceInstances.addAll(discoveryClient.getInstances(name)));
+
+        planets = serviceInstances.stream()
+                .map(this::createPlanet)
+                .collect(Collectors.toList());
 
         return planets;
     }
@@ -38,7 +45,9 @@ public class PlanetDiscoveryService implements PlanetSource {
     public List<String> getPlanetsNames(){
         List<String> allNames = discoveryClient.getServices();
         //filter own name out of the list
-        return allNames.stream().filter(n-> !n.equals(applicationName)).collect(Collectors.toList());
+        return allNames.stream()
+                .filter(n-> !n.equals(applicationName))
+                .collect(Collectors.toList());
     }
 
     /**

@@ -2,7 +2,7 @@ package eu.luminis.task;
 
 import eu.luminis.domain.KnownPlanet;
 import eu.luminis.domain.Planet;
-import eu.luminis.service.PlanetDiscoveryService;
+import eu.luminis.service.DiscoveryService;
 import eu.luminis.service.PlanetRegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,11 +17,11 @@ public class UpdateKnownPlanetsTask {
     @Autowired
     PlanetRegisterService planetRegisterService;
     @Autowired
-    PlanetDiscoveryService planetDiscoveryService;
+    DiscoveryService discoveryService;
 
     @Scheduled(fixedDelayString = "${application.task.updateKnownPlanets.interval}")
     private void updateKnownPlanetsRegistry(){
-        List<Planet> discoveredPlanets = planetDiscoveryService.getDiscoverdPlanets();
+        List<Planet> discoveredPlanets = discoveryService.getDiscoverdPlanets();
         List<KnownPlanet> knownPlanets = planetRegisterService.getKnownPlanets();
 
         //Add new discovered planets
