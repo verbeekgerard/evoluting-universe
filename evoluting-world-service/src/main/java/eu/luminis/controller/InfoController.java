@@ -1,5 +1,6 @@
 package eu.luminis.controller;
 
+import eu.luminis.domain.ResponseStatus;
 import eu.luminis.entities.Animal;
 import eu.luminis.export.ExportInfo;
 import eu.luminis.export.ExportInfoImpl;
@@ -10,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -26,9 +28,9 @@ public class InfoController {
     RunService runService;
 
     @RequestMapping(value = "/startPlanet")
-    public String start(){
+    public @ResponseBody ResponseStatus start(){
         runService.run();
-        return "{'started':'true'}";
+        return new ResponseStatus("Planet is started!",true);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/currentStats")
