@@ -2,6 +2,7 @@ package eu.luminis.controller;
 
 import eu.luminis.domain.ResponseStatus;
 import eu.luminis.service.RunService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by gerardverbeek on 04/09/16.
  */
 @RestController
+@Api(value = "Planet Life", description = "Endpoint for controlling the planet")
 public class PlanetLifeController {
 
     @Autowired

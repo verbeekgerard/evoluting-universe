@@ -3,6 +3,8 @@ package eu.luminis.controller;
 import eu.luminis.export.ExportInfo;
 import eu.luminis.export.ExportInfoImpl;
 import eu.luminis.ui.Stats;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by gerardverbeek on 25/08/16.
  */
 @RestController
+@Api(value = "Statistics", description = "Endpoint for statistics about the planet")
 public class StatsController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    @ApiOperation(
+            value = "Current statistics",
+            notes = "This endpoint returns the current statistics of the planet",
+            response = Stats.class
+    )
     @RequestMapping(method = RequestMethod.GET, value = "/currentStats")
     public Stats getStats(){
         ExportInfo exportInfo =  ExportInfoImpl.getInstance();
