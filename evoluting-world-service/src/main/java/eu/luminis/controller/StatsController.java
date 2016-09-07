@@ -23,11 +23,7 @@ public class StatsController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @ApiOperation(
-            value = "Current statistics",
-            notes = "This endpoint returns the current statistics of the planet",
-            response = Stats.class
-    )
+    @ApiOperation(value = "Current statistics", notes = "This endpoint returns the current statistics of the planet", response = Stats.class)
     @RequestMapping(method = RequestMethod.GET, value = "/currentStats")
     public Stats getCurrentStats(){
         ExportInfo exportInfo =  ExportInfoImpl.getInstance();
