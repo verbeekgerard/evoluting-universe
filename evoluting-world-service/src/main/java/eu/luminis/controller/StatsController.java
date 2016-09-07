@@ -1,6 +1,5 @@
 package eu.luminis.controller;
 
-import eu.luminis.entities.Animal;
 import eu.luminis.export.ExportInfo;
 import eu.luminis.export.ExportInfoImpl;
 import eu.luminis.ui.Stats;
@@ -10,13 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 /**
  * Created by gerardverbeek on 25/08/16.
  */
 @RestController
-public class InfoController {
+public class StatsController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -30,14 +27,6 @@ public class InfoController {
         return exportInfo.getStats();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/getPopulation")
-    public List<Animal> getPopulation(){
-        ExportInfo exportInfo =  ExportInfoImpl.getInstance();
-        if(exportInfo == null){
-            log.error("No ExportInfo instance available. Start the 'world' first!");
-            return null;
-        }
-        return null; //exportInfo.getAnimals();
-    }
+
 
 }
