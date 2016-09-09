@@ -1,10 +1,19 @@
 package eu.luminis.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+
+@Document(indexName = "stats", type = "thisApplicationName")
 public class Stats {
+
+    @Id
+    private Long  id;
+
     private int totalStarved;
     private int totalCollisions;
     private int totalWandered;
     private int totalDiedOfAge;
+
     private String avgHealth;
     private String best;
 

@@ -18,7 +18,7 @@ public class KnownPlanet extends Planet {
      */
     public void startPlanet(){
         RestTemplate restTemplate = new RestTemplate();
-        ResponseStatus response = restTemplate.getForObject(this.getUrl()+ Action.START, ResponseStatus.class);
+        ResponseStatus response = restTemplate.postForObject(this.getUrl()+ Action.START, null, ResponseStatus.class);
         if(response.isSuccessful()){
             this.setStarted(true);
             log.info("{} is started!:", this.getName());
@@ -30,7 +30,7 @@ public class KnownPlanet extends Planet {
      */
     public void stopPlanet(){
         RestTemplate restTemplate = new RestTemplate();
-        ResponseStatus response = restTemplate.getForObject(this.getUrl()+ Action.STOP, ResponseStatus.class);
+        ResponseStatus response = restTemplate.postForObject(this.getUrl()+ Action.STOP, null, ResponseStatus.class);
         if(response.isSuccessful()){
             this.setStarted(true);
             log.info("{} is started!:", this.getName());
