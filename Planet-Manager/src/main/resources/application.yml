@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: planet-manager
+  data:
+      elasticsearch:
+          cluster-name: evoluting-univers
+          cluster-nodes: localhost:9300
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 9100
+
+
+application:
+  task:
+    updateKnownPlanets:
+      interval: 5000
+    exportStats:
+      interval: 5000
+
+elasticsearch:
+  stats:
+    indexName: stats
+
+eureka:
+  client:
+    :register-with-eureka: false
+    :fetch-registry: true
+
+logging:
+  level:
+    ROOT: INFO
+    eu.luminis: DEBUG
+
