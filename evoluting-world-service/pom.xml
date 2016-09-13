@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>evoluting-planet</name>
-	<description>Evoluting Planet</description>
+	<description>Evoluting Planet</description>           `
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

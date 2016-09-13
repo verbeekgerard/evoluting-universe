@@ -3,6 +3,4 @@ evoluting-planet.iml
 target/
 discovery/discovery.iml
 evoluting-world-service/evoluting-world-service.iml
-Planet-Manager/mvnw
-Planet-Manager/mvnw.cmd
 Planet-Manager/Planet-Manager.iml
