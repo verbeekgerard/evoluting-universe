@@ -12,7 +12,6 @@ import org.springframework.data.elasticsearch.core.query.IndexQuery;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.net.UnknownHostException;
 
 @Service
 public class ElasticsearchExportStatsService implements ExportStatsService {
@@ -31,18 +30,21 @@ public class ElasticsearchExportStatsService implements ExportStatsService {
     @PostConstruct
     public void initIndex()
     {
-        try {
-            template = elasticSearchConfig.elasticsearchTemplate();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        // Create an index if necessary
-        if (!template.indexExists(INDEX_NAME)){
-            template.createIndex(INDEX_NAME);
-        }
-        // Tell ELK to consider StockQuotation as a entity to use
-        template.putMapping(Stats.class);
-        template.refresh(INDEX_NAME);
+//        try {
+//            template = elasticSearchConfig.elasticsearchTemplate();
+//        } catch (UnknownHostException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//
+//        // Create an index if necessary
+//        if (!template.indexExists(INDEX_NAME)){
+//            template.createIndex(INDEX_NAME);
+//        }
+//        // Tell ELK to consider StockQuotation as a entity to use
+//        template.putMapping(Stats.class);
+//        template.refresh(INDEX_NAME);
     }
 
     @Override
