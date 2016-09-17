@@ -24,6 +24,13 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,14 +44,14 @@
 		</dependency>
 
 		<dependency>
-			<groupId>eu.luminis</groupId>
-			<artifactId>evoluting-life-java</artifactId>
-			<version>0.1-SNAPSHOT</version>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<groupId>com.github.verbeekgerard</groupId>
+			<artifactId>evoluting-life-java</artifactId>
+			<version>v0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>

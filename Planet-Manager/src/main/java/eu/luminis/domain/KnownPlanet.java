@@ -1,12 +1,12 @@
 package eu.luminis.domain;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.client.RestTemplate;
 
+@Data
+@Slf4j
 public class KnownPlanet extends Planet {
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
-
     private boolean started;
 
     public KnownPlanet(Planet planet) {
@@ -18,7 +18,7 @@ public class KnownPlanet extends Planet {
      */
     public void startPlanet(){
         RestTemplate restTemplate = new RestTemplate();
-        ResponseStatus response = restTemplate.postForObject(this.getUrl()+ Action.START, null, ResponseStatus.class);
+        ResponseStatus response = restTemplate.postForObject(this.getUrl() + Action.START, null, ResponseStatus.class);
         if(response.isSuccessful()){
             this.setStarted(true);
             log.info("{} is started!:", this.getName());
@@ -43,12 +43,10 @@ public class KnownPlanet extends Planet {
      */
     public Stats getStats(){
         RestTemplate restTemplate = new RestTemplate();
-        Stats stats = restTemplate.getForObject(this.getUrl()+ Action.STATS, Stats.class);
+        //TODO: Make 'Stats' class available in some sort of commons project so it can be shared between the projects.
+        Stats stats = restTemplate.getForObject(this.getUrl() + Action.STATS, Stats.class);
         return stats;
     }
-
-    public boolean isStarted() {return started;}
-    public void setStarted(boolean started) {this.started = started;}
 
     enum Action {
         START ("/startPlanet"),
