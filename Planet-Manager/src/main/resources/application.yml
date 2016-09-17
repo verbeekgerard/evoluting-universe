@@ -15,7 +15,7 @@ application:
     updateKnownPlanets:
       interval: 5000
     exportStats:
-      interval: 5000
+      interval: 2000
 
 elasticsearch:
   stats:

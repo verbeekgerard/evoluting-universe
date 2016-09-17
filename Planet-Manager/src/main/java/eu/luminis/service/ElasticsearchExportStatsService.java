@@ -46,16 +46,19 @@ public class ElasticsearchExportStatsService implements ExportStatsService {
     @Override
     public void export(KnownPlanet planet) {
         Stats stats = planet.getStats();
-        IndexQuery query = new IndexQuery();
-        query.setIndexName(INDEX_NAME);
-        query.setType(planet.getName());
-        query.setObject(stats);
-        try {
-            template.index(query);
-            log.debug("exporting stats: {}", stats);
-        }catch (NoNodeAvailableException e){
-            log.warn("No stats exported to ElasticSearch! Check if the node(s) are available.");
+        if(stats != null){
+            IndexQuery query = new IndexQuery();
+            query.setIndexName(INDEX_NAME);
+            query.setType(planet.getName());
+            query.setObject(stats);
+            try {
+                template.index(query);
+//                log.debug("exporting stats: {}", stats);
+            }catch (NoNodeAvailableException e){
+                log.warn("No stats exported to ElasticSearch! Check if the node(s) are available.");
+            }
         }
+
     }
 
 }

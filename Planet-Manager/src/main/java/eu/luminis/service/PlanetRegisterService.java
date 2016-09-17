@@ -41,7 +41,7 @@ public class PlanetRegisterService {
      */
     public void removePlanetFromRegistry(KnownPlanet knownPlanet){
         knownPlanets.remove(knownPlanet);
-        log.info("Planet '{}' removed location: '{}'", knownPlanet.getName(), knownPlanet.getUrl());
+        log.info("Planet '{}' removed. Location: '{}'", knownPlanet.getName(), knownPlanet.getUrl());
     }
 
     /**

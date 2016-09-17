@@ -27,8 +27,8 @@ public class PlanetApplication {
 
 	private static void setName(String[] args){
 		String name;
-		if (args.length > 0 && !args[0].equals("--spring.output.ansi.enabled=always")) {
-			name = args[0];
+		if (args.length > 1 && !args[0].equals("--spring.output.ansi.enabled=always")) {
+			name = args[1];
 		} else {
 			name = NameService.getRandomName();
 		}
@@ -36,8 +36,8 @@ public class PlanetApplication {
 	}
 
 	private static void setPort(String[] args) {
-		if (args.length > 1 && !args[0].equals("--spring.output.ansi.enabled=always")) {
-			System.setProperty("server.port", args[1]);
+		if (args.length > 0 && !args[0].equals("--spring.output.ansi.enabled=always")) {
+			System.setProperty("server.port", args[0]);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class PlanetApplication {
 				"Try the API operations. Each operation has it's own description",
 				"",
 				"",
-				"gerard.verbeek@luminis.eu",
+				"",
 				"",
 				"");
 		return apiInfo;

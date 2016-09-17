@@ -1,11 +1,16 @@
 package eu.luminis.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Date;
 
 @Data
 @Slf4j
+@EqualsAndHashCode(callSuper = true)
 public class KnownPlanet extends Planet {
     private boolean started;
 
@@ -17,11 +22,15 @@ public class KnownPlanet extends Planet {
      * Start this planet
      */
     public void startPlanet(){
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseStatus response = restTemplate.postForObject(this.getUrl() + Action.START, null, ResponseStatus.class);
-        if(response.isSuccessful()){
-            this.setStarted(true);
-            log.info("{} is started!:", this.getName());
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseStatus response = restTemplate.postForObject(this.getUrl() + Action.START, null, ResponseStatus.class);
+            if (response.isSuccessful()) {
+                this.setStarted(true);
+                log.info("{} is started!:", this.getName());
+            }
+        }catch(ResourceAccessException e){
+            log.error("Could not start Planet {}!", this.getName());
         }
     }
 
@@ -42,10 +51,19 @@ public class KnownPlanet extends Planet {
      * @return Stats object
      */
     public Stats getStats(){
-        RestTemplate restTemplate = new RestTemplate();
-        //TODO: Make 'Stats' class available in some sort of commons project so it can be shared between the projects.
-        Stats stats = restTemplate.getForObject(this.getUrl() + Action.STATS, Stats.class);
-        return stats;
+        try{
+            RestTemplate restTemplate = new RestTemplate();
+            //TODO: Make 'Stats' class available in some sort of commons project so it can be shared between the projects.
+            Stats stats = restTemplate.getForObject(this.getUrl() + Action.STATS, Stats.class);
+            if(stats != null){
+                stats.setCreationDate(new Date());
+                stats.setPlanetName(this.getName());
+                return stats;
+            }
+        }catch (ResourceAccessException e ){
+            log.info("Could not receive stats from planet {} ({}). Resource is not available.", this.getName(), this.getUrl());
+        }
+        return null;
     }
 
     enum Action {

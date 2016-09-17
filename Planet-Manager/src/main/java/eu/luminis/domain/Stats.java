@@ -21,14 +21,12 @@ public class Stats {
     private int totalCollisions;
     private int totalWandered;
     private int totalDiedOfAge;
-    private String avgHealth;
-    private String best;
+    private double avgHealth;
+    private double best;
 
-    @Field(
-            type = FieldType.Date,
-            index = FieldIndex.not_analyzed,
-            store = true,
-            format = DateFormat.basic_date_time
-    )
-    Date date = new Date();
+    @Field(type = FieldType.String, index = FieldIndex.not_analyzed)
+    private String planetName;
+
+    @Field(type = FieldType.Date)
+    Date creationDate;
 }
