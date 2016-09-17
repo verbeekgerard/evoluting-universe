@@ -11,7 +11,7 @@ Open a terminal and go to the root of the Evoluting-Planet project. Type the com
 ```
 mvn package
 ```
-This wil create a JAR file in the target directory.
+This willcreate a JAR file in the target directory.
 
 Start the JAR file with the command:
 ```
@@ -29,7 +29,7 @@ Go to the root of the Discovery project. Type in the command
 ```
 mvn package
 ``` 
-This wil create a JAR file in the target directory.
+This will create a JAR file in the target directory.
 Start the JAR file with the command:
 
 ```
@@ -42,11 +42,11 @@ Go to the root of the Planet Manager project. Type in the command
 ```
 mvn package
 ``` 
-This wil create a JAR file in the target directory.
+This will create a JAR file in the target directory.
 Start the JAR file with the command:
 
 ```
 java -jar /path/to/jar/planet-manager-<VERSION>.jar
 ```
-This will start the planet manager (default on port 9100). After the Planet Manager is started you can start as much planets as you want. They wil be found by the Discovery and the Planet Manager wil start the planets. 
+This will start the planet manager (default on port 9100). After the Planet Manager is started you can start as much planets as you want. The planets will be found by the Discovery and the Planet Manager will start the planets. 
 
