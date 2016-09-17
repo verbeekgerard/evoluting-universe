@@ -15,10 +15,10 @@ This willcreate a JAR file in the target directory.
 
 Start the JAR file with the command:
 ```
-java -jar /path/to/jar/evoluting-planet-<VERSION>.jar <NAME> <PORT>
+java -jar /path/to/jar/evoluting-planet-<VERSION>.jar <PORT> <NAME>
 ```
 
-Go to: 'http://localhost:<PORT>/swagger-ui.html' to interact with the planet. 
+Go to: 'http://localhost:<PORT>/' to interact with the planet. 
 
 
 ## Planet Manager & Discovery (Eureka)
