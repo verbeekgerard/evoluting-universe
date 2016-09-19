@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by gerardverbeek on 03/09/16.
- */
+
 @Service
 public class PlanetRegisterService {
     private final Logger log = LoggerFactory.getLogger(this.getClass());

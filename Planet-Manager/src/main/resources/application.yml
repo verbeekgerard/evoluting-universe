@@ -3,8 +3,8 @@ spring:
     name: planet-manager
   data:
       elasticsearch:
-          cluster-name: evoluting-univers
-          cluster-nodes: localhost:9300
+          cluster-name: evoluting-universe
+          cluster-nodes: apeldoorn.gerardverbeek.nl:9300
 
 server:
   port: 9100
