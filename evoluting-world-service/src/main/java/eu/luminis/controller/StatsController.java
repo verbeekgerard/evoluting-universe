@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Created by gerardverbeek on 25/08/16.
- */
 @RestController
 @Api(value = "Statistics", description = "Endpoint for statistics about the planet")
 public class StatsController {
@@ -33,17 +30,4 @@ public class StatsController {
         }
         return exportInfo.getStats();
     }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/getPopulation")
-    public List<Animal> getCurrentPopulation(){
-        ExportInfo exportInfo =  ExportInfoImpl.getInstance();
-        if(exportInfo == null){
-            log.error("No ExportInfo instance available. Start the 'world' first!");
-            return null;
-        }
-        return null; //exportInfo.getAnimals();
-    }
-
-
-
 }
