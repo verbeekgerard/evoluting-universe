@@ -49,9 +49,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.verbeekgerard</groupId>
+			<groupId>eu.luminis</groupId>
 			<artifactId>evoluting-life-java</artifactId>
-			<version>v0.0.1-SNAPSHOT</version>
+			<version>0.1.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
