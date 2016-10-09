@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Created by gerardverbeek on 04/09/16.
- */
 @RestController
 @Api(value = "Planet Life", description = "Endpoint for controlling the planet")
 public class PlanetLifeController {
@@ -31,5 +28,4 @@ public class PlanetLifeController {
         runService.stop();
         return new ResponseStatus("Planet is stopped",true);
     }
-
 }

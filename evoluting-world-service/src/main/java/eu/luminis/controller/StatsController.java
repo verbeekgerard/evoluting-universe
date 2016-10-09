@@ -22,12 +22,13 @@ public class StatsController {
 
     @ApiOperation(value = "Current statistics", notes = "This endpoint returns the current statistics of the planet", response = Stats.class)
     @RequestMapping(method = RequestMethod.GET, value = "/currentStats")
-    public Stats getCurrentStats(){
+    public Stats getCurrentStats() {
         ExportInfo exportInfo =  ExportInfoImpl.getInstance();
         if(exportInfo == null){
             log.error("No ExportInfo instance available. Start the 'world' first!");
             return null;
         }
+
         return exportInfo.getStats();
     }
 }

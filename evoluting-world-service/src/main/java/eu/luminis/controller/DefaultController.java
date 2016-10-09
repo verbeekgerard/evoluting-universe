@@ -12,7 +12,7 @@ public class DefaultController {
     }
     
     @RequestMapping(value = "/info", method = RequestMethod.GET)
-    public String swagger() {
+    public String swaggerInfo() {
         return "redirect:swagger-ui.html";
     }
 }

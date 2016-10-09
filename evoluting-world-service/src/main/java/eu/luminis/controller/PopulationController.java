@@ -9,6 +9,4 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Population", description = "Endpoint for information and management of the population")
 public class PopulationController {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
-
-
 }
