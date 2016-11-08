@@ -1,14 +1,11 @@
 package eu.luminis.service;
 
-import eu.luminis.general.Run;
+import eu.luminis.Run;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by gerardverbeek on 29/08/16.
- */
 @Service
 public class RunService {
 
