@@ -50,14 +50,14 @@ This will start the planet manager (default on port 9100). After the Planet Mana
 
 ### Update Evoluting-Universe version
 1. Create a [Github release](https://github.com/blog/1547-release-your-software) of the 'evoluting-life-java' project. 
-2. Use the tag from the [release](https://github.com/verbeekgerard/evoluting-life-java/releases) and insert it in the 'evoluting-life-java' dependecy, from the Evoluting-Planet project. 
+2. Use the tag from the [release](https://github.com/verbeekgerard/evoluting-life-java/releases) and insert it in the 'evoluting-life-java' dependecy, from the Evoluting-Planet project.
 
-    <dependency>
+		<dependency>
 			<groupId>com.github.verbeekgerard</groupId>
 			<artifactId>evoluting-life-java</artifactId>
-			<version>TAG</version>
+			<version>2.1.4</version>
 		</dependency>
-    
+		
 3. Check jitpack.io/com/github/verbeekgerard/evoluting-life-java/THE_NEW_VERSION/build.log if the build is been succesfull 
 4. Start the Evoluting-Planet application
 
