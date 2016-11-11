@@ -55,9 +55,9 @@ This will start the planet manager (default on port 9100). After the Planet Mana
 		<dependency>
 			<groupId>com.github.verbeekgerard</groupId>
 			<artifactId>evoluting-life-java</artifactId>
-			<version>2.1.4</version>
+			<version>THE_NEW_VERSION</version>
 		</dependency>
 		
-3. Check jitpack.io/com/github/verbeekgerard/evoluting-life-java/THE_NEW_VERSION/build.log if the build is been succesfull 
+3. Check <http://jitpack.io/com/github/verbeekgerard/evoluting-life-java/THE_NEW_VERSION/build.log> if the build is been succesfull 
 4. Start the Evoluting-Planet application
 
