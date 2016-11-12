@@ -48,7 +48,7 @@ java -jar /path/to/jar/planet-manager-<VERSION>.jar
 ```
 This will start the planet manager (default on port 9100). After the Planet Manager is started you can start as much planets as you want. The planets will be found by the Discovery and the Planet Manager will start the planets.
 
-## Update Evoluting-Universe version
+## Update Evoluting-Life version
 1. Create a [Github release](https://github.com/blog/1547-release-your-software) of the 'evoluting-life-java' project. 
 2. Use the tag from the [release](https://github.com/verbeekgerard/evoluting-life-java/releases) and insert it in the 'evoluting-life-java' dependecy, from the Evoluting-Planet project.
 
