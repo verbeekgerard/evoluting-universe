@@ -54,13 +54,6 @@
 			<version>2.1.5</version>
 		</dependency>
 
-
-		<dependency>
-			<groupId>eu.luminis</groupId>
-			<artifactId>evoluting-life-java</artifactId>
-			<version>2.1.5</version>
-		</dependency>
-
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
