@@ -4,7 +4,7 @@ spring:
   data:
       elasticsearch:
           cluster-name: evoluting-universe
-          cluster-nodes: apeldoorn.gerardverbeek.nl:9300
+          cluster-nodes: apeldoorn.gerardverbeek.nl:9201
 
 server:
   port: 9100
