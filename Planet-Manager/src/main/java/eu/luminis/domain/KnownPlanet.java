@@ -58,6 +58,7 @@ public class KnownPlanet extends Planet {
             if(stats != null){
                 stats.setCreationDate(new Date());
                 stats.setPlanetName(this.getName());
+                stats.setUrl(this.getUrl());
                 return stats;
             }
         }catch (ResourceAccessException e ){

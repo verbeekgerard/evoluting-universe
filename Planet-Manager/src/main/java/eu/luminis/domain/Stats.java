@@ -16,13 +16,15 @@ public class Stats {
 
     @Id
     private Long  id;
-
-    private int totalStarved;
-    private int totalCollisions;
-    private int totalWandered;
     private int totalDiedOfAge;
+    private int totalWandered;
+    private int totalCollisions;
+    private int totalStarved;
     private double averageHealth;
-    private double best;
+    private double averageAge;
+    private double averageDistance;
+    private double averageBestFitness;
+    private String url;
 
     @Field(type = FieldType.String, index = FieldIndex.not_analyzed)
     private String planetName;
