@@ -1,6 +1,6 @@
 package eu.luminis;
 
-import eu.luminis.service.NameService;
+import eu.luminis.service.NameUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -30,7 +30,7 @@ public class PlanetApplication {
 		if (args.length > 1 && !args[0].equals("--spring.output.ansi.enabled=always")) {
 			name = args[1];
 		} else {
-			name = NameService.getRandomName();
+			name = NameUtil.getRandomName();
 		}
 		System.setProperty("spring.application.name", name);
 	}

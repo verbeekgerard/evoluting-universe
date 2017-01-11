@@ -3,10 +3,7 @@ package eu.luminis.service;
 import java.util.Random;
 import java.util.UUID;
 
-/**
- * Created by gerardverbeek on 03/09/16.
- */
-public class NameService {
+public class NameUtil {
 
     public static String getRandomName() {
         String planetName = PlanetName.values()[getRandomIndex()].toString();
