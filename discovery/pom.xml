@@ -5,7 +5,7 @@
 
 	<groupId>eu.luminis</groupId>
 	<artifactId>discovery</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>discovery</name>

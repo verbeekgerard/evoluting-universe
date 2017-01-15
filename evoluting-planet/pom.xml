@@ -5,7 +5,7 @@
 
 	<groupId>eu.luminis</groupId>
 	<artifactId>evoluting-planet</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>evoluting-planet</name>
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>com.github.verbeekgerard</groupId>
 			<artifactId>evoluting-life-java</artifactId>
-			<version>2.2.1</version>
+			<version>2.2.2</version>
 		</dependency>
 
 		<dependency>
