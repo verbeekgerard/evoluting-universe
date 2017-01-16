@@ -24,6 +24,7 @@ public class Stats {
     private double averageAge;
     private double averageDistance;
     private double averageBestFitness;
+    @Field(type = FieldType.String, index = FieldIndex.not_analyzed)
     private String url;
 
     @Field(type = FieldType.String, index = FieldIndex.not_analyzed)
